@@ -8,6 +8,11 @@ public class OrderPractice {
 			System.out.println("Usage: ProcessOrders symbolsFile firmsFile orderFile");
 			return;
 		}
+		
+		processOrders(args);
 	}
 
+	public static void processOrders(String[] args) {
+		
+	}
 }
