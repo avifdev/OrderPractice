@@ -9,8 +9,8 @@ public class OrderPractice {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		if (args.length != 3) {
-			System.out.println("Usage: ProcessOrders symbolsFile brokersFile orderFile");
+		if (args.length != 5) {
+			System.out.println("Usage: ProcessOrders symbolsFile brokersFile orderFile acceptedOrdersPath rejectedOrdersPath");
 			return;
 		}
 		
@@ -18,7 +18,7 @@ public class OrderPractice {
 	}
 
 	public static void processOrders(String[] args) {
-		final InputProcessor inputProcessor = new InputProcessor();
+		final InputProcessor inputProcessor = new InputProcessor(args[3], args[4]);
 
 		if (!inputProcessor.readSymbols(args[0])) {
 			logger.log(Level.WARNING, "Error processing symbols file " + args[0]);
